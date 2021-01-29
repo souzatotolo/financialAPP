@@ -22,7 +22,7 @@ export default function Home() {
       <StatusBar barStyle='light-content' />
       <Header />
       <Container>
-        <Nome>Richard</Nome>
+        <Nome>{user && user.nome}</Nome>
         <Saldo>123.223,00</Saldo>
       </Container>
 
