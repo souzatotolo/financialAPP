@@ -3,6 +3,8 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   margin-bottom: 7px;
   padding: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   box-shadow: 1px 1px rgba(0, 0, 0, 0.40);
   background-color: rgba(0, 0, 0, 0.02);
 `;

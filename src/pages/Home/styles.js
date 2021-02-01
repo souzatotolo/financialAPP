@@ -11,6 +11,7 @@ export const Background = styled.SafeAreaView`
 export const Container = styled.View`
   margin-left: 25px;
     margin-bottom: 25px;
+  
 `;
 
 export const Nome = styled.Text`
@@ -30,7 +31,8 @@ export const Title = styled.Text`
   margin-left: 25px;
   color: #00b94a;
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 22px;
+  align-self: center;
 `;
 
 export const List = styled.FlatList.attrs({
