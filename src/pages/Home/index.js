@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { SafeAreaView, Text, Button, View, StatusBar } from 'react-native';
+import { SafeAreaView, Text, Button, View, StatusBar, Alert } from 'react-native';
 import Header from '../../components/Header'
 import { Background, Nome, Saldo, Container, Title, List } from './styles'
 import { AuthContext } from '../../contetexts/auth';
@@ -37,6 +37,38 @@ export default function Home() {
     loadList();
   }, [])
 
+  function handleDeleteItem(data) {
+    Alert.alert(
+      'Cuidado!',
+      `Voce deseja excluir a ${data.tipo} com o valor de R$${data.valor}?`,
+      [
+        {
+          text: 'Cancelar',
+          style: 'cancel'
+        },
+        {
+          text: 'Continuar',
+          onPress: () => handleDeleteSucess(data)
+        }
+      ]
+
+    );
+
+  }
+
+  async function handleDeleteSucess(data) {
+    await firebase.database().ref('historico').child(uid).child(data.key).remove()
+      .then(async () => {
+        let saldoAtual = saldo;
+        data.tipo === 'despesa' ? saldoAtual += parseFloat(data.valor) : saldoAtual -= parseFloat(data.valor)
+
+        await firebase.database().ref('users').child(uid).child('saldo').set(saldoAtual)
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+
   return (
     <Background>
       <StatusBar barStyle='light-content' />
@@ -53,7 +85,7 @@ export default function Home() {
         data={historico}
         keyExtract={(item) => item.key}
         renderItem={({ item }) => (
-          <HistoricoList data={item} />
+          <HistoricoList data={item} deleteItem={handleDeleteItem} />
         )}
       />
     </Background>
