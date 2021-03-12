@@ -1,12 +1,12 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  margin-bottom: 7px;
+  margin-bottom: 2px;
   padding: 15px;
   padding-left: 15px;
   padding-right: 15px;
   box-shadow: 1px 1px rgba(0, 0, 0, 0.40);
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: #343746;
 `;
 
 export const Tipo = styled.View`
@@ -31,7 +31,7 @@ export const TipoText = styled.Text`
 `;
 
 export const ValorText = styled.Text`
-  color: #222;
+  color: #f3f3f3;
   font-size: 22px;
   font-weight: bold;
 `;

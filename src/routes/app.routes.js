@@ -12,7 +12,7 @@ export default function AppRoutes() {
     <AppDrawer.Navigator
       drawerContent={(props) => <CustomDrawer {...props} />}
       drawerStyle={{
-        backgroundColor: '#212121'
+        backgroundColor: '#2e2f39'
       }}
       drawerContentOptions={{
         labelStyle: {
@@ -20,7 +20,7 @@ export default function AppRoutes() {
         },
         activeTintColor: '#FFF',
         activeBackgroundColor: '#00b94a',
-        inactiveBackgroundColor: '#000',
+        inactiveBackgroundColor: '#343746',
         inactiveTintColor: '#DDD',
         itemStyle: {
           marginVertical: 5,

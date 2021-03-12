@@ -5,4 +5,5 @@ export const PickerView = styled.View`
   background-color: #FFFFFF;
   align-items: center;
   width: 90%;
+  border-radius: 5px;
 `;

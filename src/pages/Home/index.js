@@ -1,7 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { SafeAreaView, Text, Button, View, StatusBar, Alert } from 'react-native';
-import Header from '../../components/Header'
-import { Background, Nome, Saldo, Container, Title, List } from './styles'
+import { StyleSheet } from 'react-native'
+import { StatusBar, Alert } from 'react-native';
+import Header from '../../components/Header';
+import { Background, Nome, Saldo, Container, Title, List } from './styles';
 import { AuthContext } from '../../contetexts/auth';
 import HistoricoList from '../../components/HistoricoList';
 import firebase from '../../services/firebaseConnection';
@@ -74,7 +75,7 @@ export default function Home() {
       <StatusBar barStyle='light-content' />
       <Header />
       <Container>
-        <Nome>{user && user.nome}</Nome>
+        <Nome>Saldo de {user && user.nome}</Nome>
         <Saldo>R$ {saldo.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')}</Saldo>
       </Container>
 
@@ -90,4 +91,5 @@ export default function Home() {
       />
     </Background>
   );
+
 }
