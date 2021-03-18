@@ -1,5 +1,7 @@
 # financasApp
 
+<img alt="financasapp" src="src/assets/financas.gif" width="400px" align="center" />
+
 # README.md em desenvolvimento
 
 
